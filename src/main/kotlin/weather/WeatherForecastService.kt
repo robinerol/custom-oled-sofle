@@ -19,6 +19,6 @@ data class Forecast(val updatedAt: Instant, val snapshots: List<Snapshot>) {
 interface Snapshot {
     val time: String
     val airTemperature: Double
-    val cloudAreaFraction: Double
+    val cloudAreaFraction: Int
     val precipitationAmount: Double
 }

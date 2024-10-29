@@ -66,7 +66,7 @@ class MetWeatherForecastService(private val userAgent: String) : WeatherForecast
 data class MetSnapshot(
     override val time: String,
     override val airTemperature: Double,
-    override val cloudAreaFraction: Double,
+    override val cloudAreaFraction: Int,
     override val precipitationAmount: Double
 ) : Snapshot {
     companion object {
@@ -80,7 +80,7 @@ data class MetSnapshot(
                 MetSnapshot(
                     time = it.getString("time"),
                     airTemperature = details.getDouble("air_temperature"),
-                    cloudAreaFraction = details.getDouble("air_temperature"),
+                    cloudAreaFraction = details.getInt("cloud_area_fraction"),
                     precipitationAmount = nextHourDetails?.getDouble("precipitation_amount") ?: 0.0
                 )
             }
