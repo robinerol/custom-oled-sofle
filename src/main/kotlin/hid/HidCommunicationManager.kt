@@ -46,6 +46,10 @@ class HidCommunicationManager(
         }
     }
 
+    override fun hidDataReceived(p0: HidServicesEvent?) {
+        // TODO: Figure out if this can replace the receiver to make it all event based (was missing in 0.7.0 hid4java)
+    }
+
     override fun run() {
         val hidServicesSpecification = HidServicesSpecification()
         val hidServices = HidManager.getHidServices(hidServicesSpecification)
